@@ -7,10 +7,12 @@ class MRUCache(BaseCaching):
     """ Extends BaseCaching and implements the MRU Caching Sys"""
 
     def __init__(self):
+        """ Initialize class instance. """
         super().__init__()
         self.keys = []
 
     def put(self, key, item):
+        """ Add key/value pair to cache_data """
         if key and item:
             if len(self.cache_data) >= self.MAX_ITEMS:
                 if key in self.cache_data:
