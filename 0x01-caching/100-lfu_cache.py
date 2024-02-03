@@ -19,12 +19,15 @@ class LFUCache(BaseCaching):
         if key and item:
             current_size = len(self.cache_data)
 
-            if current_size >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            if (current_size >=
+                    BaseCaching.MAX_ITEMS and key not in self.cache_data):
                 least_frequent = min(self.key_frequency.values())
-                least_frequent_keys = [k for k, v in self.key_frequency.items() if v == least_frequent]
+                least_frequent_keys = [k for k, v in self.key_frequency.items()
+                                       if v == least_frequent]
 
                 if len(least_frequent_keys) > 1:
-                    lru_lfu = {lfu_key: self.cache_order.index(lfu_key) for lfu_key in least_frequent_keys}
+                    lru_lfu = {lfu_key: self.cache_order.index(lfu_key)
+                               for lfu_key in least_frequent_keys}
                     key_to_discard = min(lru_lfu, key=lru_lfu.get)
                 else:
                     key_to_discard = least_frequent_keys[0]
@@ -55,7 +58,6 @@ class LFUCache(BaseCaching):
 
             return self.cache_data[key]
         return None
-
 
 # my_cache = LFUCache()
 # my_cache.put("A", "Hello")
