@@ -14,6 +14,3 @@ def index():
     """ GET request to / """
     return render_template('0-index.html')
 
-
-if __name__ == "__main__":
-    app.run()
