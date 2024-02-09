@@ -10,6 +10,6 @@ babel = Babel(app)
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """ GET request to / """
     return render_template('1-index.html')
