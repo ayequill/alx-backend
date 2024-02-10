@@ -43,3 +43,5 @@ def before_request() -> None:
     if user_id:
         user_id = int(user_id)
     g.user = get_user(user_id)
+
+
