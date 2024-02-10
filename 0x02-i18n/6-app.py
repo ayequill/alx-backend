@@ -36,7 +36,7 @@ def get_locale() -> str:
 @app.route('/')
 def index() -> str:
     """ GET request to / """
-    return render_template('5-index.html',
+    return render_template('6-index.html',
                            user=g.user)
 
 

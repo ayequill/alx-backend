@@ -52,7 +52,7 @@ def get_timezone():
 @app.route('/')
 def index() -> str:
     """ GET request to / """
-    return render_template('5-index.html',
+    return render_template('7-index.html',
                            user=g.user)
 
 
