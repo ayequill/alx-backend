@@ -2,9 +2,17 @@
 """ Module for basic flask app """
 from flask import Flask, render_template
 from flask_babel import Babel
-from babel_config import Config
 
 app = Flask(__name__)
+
+
+class Config:
+    """ Babel configuration """
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
+
+
 app.config.from_object(Config)
 babel = Babel(app)
 
