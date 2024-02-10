@@ -28,7 +28,8 @@ def get_locale() -> str:
 @app.route('/')
 def index() -> str:
     """ GET request to / """
-    return render_template('5-index.html', user=g.user['name'])
+    return render_template('5-index.html',
+                           user=g.user)
 
 
 def get_user(login_as: int) -> dict:
@@ -45,3 +46,5 @@ def before_request() -> None:
     g.user = get_user(user_id)
 
 
+if __name__ == "__main__":
+    app.run()
