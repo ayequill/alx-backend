@@ -46,5 +46,5 @@ def before_request() -> None:
     g.user = get_user(user_id)
 
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
