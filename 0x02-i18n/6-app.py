@@ -20,7 +20,6 @@ users = {
 def get_locale() -> str:
     """ Select a language translation to use """
     lang = request.args.get('locale')
-    print(lang)
     if lang and lang in app.config['LANGUAGES']:
         return lang
     if g.user:

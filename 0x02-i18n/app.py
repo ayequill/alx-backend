@@ -4,6 +4,7 @@ import pytz
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 from babel_config import Config
+from datetime import datetime
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -51,8 +52,8 @@ def get_timezone():
 @app.route('/')
 def index() -> str:
     """ GET request to / """
-    return render_template('7-index.html',
-                           user=g.user)
+    return render_template('index.html',
+                           user=g.user, time=datetime.now())
 
 
 def get_user(login_as: int) -> dict:
