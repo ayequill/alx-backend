@@ -52,7 +52,3 @@ def before_request() -> None:
     if user_id:
         user_id = int(user_id)
     g.user = get_user(user_id)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
